@@ -2,9 +2,31 @@
 
 .mainForHomePage {
     width: 100%;
+}
+
+.homePageHeader {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 4rem;
+    width: 50%;
+    text-align: center;
+}
+
+.homePageText {
+    font-family: 'Poppins', sans-serif;
+    color: #a3a3a3;
+    font-size: 2rem;
+    width: 80%;
+    text-align: center;
+}
+
+.overlayText {
+    width: 100%;
     height: 50rem;
-    background-image: url('../assets/roomImg.jpg');
-    background-size: cover;
+    background-image:linear-gradient(
+        rgba(0, 0, 0, 0.6), 
+        rgba(0, 0, 0, 0.6)
+      ), url('../assets/store.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
@@ -12,4 +34,57 @@
     align-items: center;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
+}
+
+.featuredItemsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../assets/pattern.jpg');
+    padding: 2rem;
+}
+
+.featuredItemsHeader {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    color: black;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    width: 95%;
+    margin-top: 2rem;
+    column-gap: 5rem;
+    row-gap: 2rem;
+    padding-left: 3rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem;
+    align-items: center;
+}
+
+.itemImg {
+    max-height: 400px;
+}
+
+.itemTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: black;
+    height: 5rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.itemPrice {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #4b5563;
+    margin-right: 0.5rem;
 }
