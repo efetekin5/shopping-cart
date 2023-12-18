@@ -1,0 +1,46 @@
+.mainForShopPage {
+    width: 100%;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    width: 95%;
+    margin-top: 2rem;
+    column-gap: 5rem;
+    row-gap: 2rem;
+    padding-left: 3rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem;
+    align-items: center;
+}
+
+.itemImg {
+    height: 300px;
+    width: 90%;
+    transition: transform 0.1s linear;
+}
+
+.itemImg:hover {
+    transform: scale(1.1);
+}
+
+.itemTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: black;
+    height: 5rem;
+    text-align: center;
+}
+
+.itemPrice {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: green;
+    margin-right: 0.5rem;
+}

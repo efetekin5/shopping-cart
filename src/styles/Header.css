@@ -38,3 +38,16 @@
     width: 25px;
     font-weight: bolder;
 }
+
+.shopHeader {
+    width: 100vw;
+    background-color: black;
+    padding: 1.1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    z-index: 1;
+}

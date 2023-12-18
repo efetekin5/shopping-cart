@@ -37,9 +37,9 @@ export default function MainForHomePage() {
                 <h3 className='featuredItemsHeader'>Featured Items</h3>
 
                 <div className='items'>
-                    {itemData.map((item) => {
+                    {itemData.map((item, index) => {
                         return(
-                            <div className='item'>
+                            <div key={`featuredItem${index}`} className='item'>
                                 <img src={item.image} className='itemImg'></img>
                                 <h6 className='itemTitle'>{item.title}</h6>
                                 <p className='itemPrice'>${item.price}</p>

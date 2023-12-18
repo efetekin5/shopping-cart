@@ -70,7 +70,12 @@
 }
 
 .itemImg {
-    max-height: 400px;
+    height: 350px;
+    transition: transform 0.1s linear;
+}
+
+.itemImg:hover {
+    transform: scale(1.1);
 }
 
 .itemTitle {
