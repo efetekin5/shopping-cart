@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import '../styles/MainForHomePage.css'
+import { Link } from 'react-router-dom';
 
 export default function MainForHomePage() {
     const [itemData, setItemData] = useState(null);
@@ -25,7 +26,7 @@ export default function MainForHomePage() {
     if(error) return <h1>An Error Was Encountered</h1>
     if(loading) return <h1>Loading...</h1>
 
-    console.log(itemData);
+    console.log(itemData)
     return(
         <div className="mainForHomePage">
             <div className='overlayText'>
@@ -36,14 +37,16 @@ export default function MainForHomePage() {
             <div className='featuredItemsContainer'>
                 <h3 className='featuredItemsHeader'>Featured Items</h3>
 
-                <div className='items'>
+                <div className='featuredItems'>
                     {itemData.map((item, index) => {
                         return(
-                            <div key={`featuredItem${index}`} className='item'>
-                                <img src={item.image} className='itemImg'></img>
-                                <h6 className='itemTitle'>{item.title}</h6>
-                                <p className='itemPrice'>${item.price}</p>
-                            </div>
+                            <Link to={`/shop/${item.title}`} state={{ item }} key={`featuredItem${index}`} className='link' data-testid={`featuredItem${index}`}>
+                                <div className='featuredItem'>
+                                    <img src={item.image} className='featuredItemImg'></img>
+                                    <h6 className='featuredItemTitle'>{item.title}</h6>
+                                    <p className='featuredItemPrice'>${item.price}</p>
+                                </div>
+                            </Link>
                         )
                     })}
                 </div>

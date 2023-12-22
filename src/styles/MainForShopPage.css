@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 .mainForShopPage {
     width: 100%;
 }
 
-.items {
+.shopPageItems {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     width: 95%;
@@ -12,7 +14,11 @@
     padding-left: 3rem;
 }
 
-.item {
+.link {
+    text-decoration: none;
+}
+
+.shopItem {
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -20,25 +26,26 @@
     align-items: center;
 }
 
-.itemImg {
+.shopItemImg {
     height: 300px;
     width: 90%;
     transition: transform 0.1s linear;
 }
 
-.itemImg:hover {
+.shopItemImg:hover {
     transform: scale(1.1);
 }
 
-.itemTitle {
+.shopItemTitle {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     color: black;
     height: 5rem;
     text-align: center;
+    margin-top: 1.5rem;
 }
 
-.itemPrice {
+.shopItemPrice {
     font-family: 'Poppins', sans-serif;
     font-size: 1.3rem;
     color: green;

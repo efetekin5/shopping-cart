@@ -51,7 +51,7 @@
     color: black;
 }
 
-.items {
+.featuredItems {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     width: 95%;
@@ -61,7 +61,11 @@
     padding-left: 3rem;
 }
 
-.item {
+.link {
+    text-decoration: none;
+}
+
+.featuredItem {
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -69,16 +73,16 @@
     align-items: center;
 }
 
-.itemImg {
+.featuredItemImg {
     height: 350px;
     transition: transform 0.1s linear;
 }
 
-.itemImg:hover {
+.featuredItemImg:hover {
     transform: scale(1.1);
 }
 
-.itemTitle {
+.featuredItemTitle {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     color: black;
@@ -87,9 +91,9 @@
     text-align: center;
 }
 
-.itemPrice {
+.featuredItemPrice {
     font-family: 'Poppins', sans-serif;
     font-size: 2rem;
-    color: #4b5563;
+    color: green;
     margin-right: 0.5rem;
 }

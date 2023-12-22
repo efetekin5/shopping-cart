@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import '../styles/MainForShopPage.css'
+import { Link } from "react-router-dom";
 
 export default function MainForShopPage() {
     const [itemData, setItemData] = useState();
@@ -26,16 +27,19 @@ export default function MainForShopPage() {
     if(error) return <h1>An Error Was Encountered</h1>
     if(loading) return <h1>Loading...</h1>
 
+    console.log(itemData)
     return (
-        <div className="mainForShopPage" data-testid='mainForShopPage'>
-            <div className="items">
-                {itemData.map((item) => {
+        <div className="mainForShopPage" data-testid="mainForShopPage">
+            <div className="shopPageItems">
+                {itemData.map((item, index) => {
                     return(
-                        <div className="item">
-                            <img className="itemImg" src={item.image}></img>
-                            <h6 className='itemTitle'>{item.title}</h6>
-                            <p className='itemPrice'>${item.price}</p>
-                        </div>
+                        <Link key={`shopItem${index}`} className="link">
+                            <div className="shopItem">
+                                <img className="shopItemImg" src={item.image}></img>
+                                <h6 className='shopItemTitle'>{item.title}</h6>
+                                <p className='shopItemPrice'>${item.price}</p>
+                            </div>
+                        </Link>
                     )
                 })}
             </div>
