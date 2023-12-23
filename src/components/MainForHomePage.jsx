@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import '../styles/MainForHomePage.css'
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 export default function MainForHomePage() {
     const [itemData, setItemData] = useState(null);

@@ -2,10 +2,12 @@ import '../styles/Header.css'
 import { Link, useLocation } from "react-router-dom";
 import searchIcon from '../assets/search.png'
 import shoppingCart from '../assets/shopping-cart.png'
+import PropTypes from 'prop-types'
 
-export default function Header() {
+export default function Header(itemCount) {
     const location = useLocation();
     const headerClass = location.pathname === '/' ? 'header' : 'shopHeader';
+    console.log(itemCount)
 
     return(
         <div className={headerClass} data-testid='header'>
@@ -18,4 +20,8 @@ export default function Header() {
             </nav>
         </div>
     )
+}
+
+Header.propTypes = {
+    itemCount: PropTypes.number,
 }

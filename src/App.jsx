@@ -3,20 +3,23 @@ import Home from './components/Home'
 import Shop from "./components/Shop"
 import './styles/App.css'
 import Item from "./components/Item"
+import { useState } from "react"
 
 export default function App() {
+    const [itemCount, setItemCount] = useState(0);
+
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <Home />,
+            element: <Home itemCount={itemCount} />,
         },
         {
             path: '/shop',
-            element: <Shop />,
+            element: <Shop itemCount={itemCount} />,
         },
         {
             path: '/shop/:itemName',
-            element: <Item />
+            element: <Item itemCount={itemCount} setItemCount={setItemCount}/>
         }
     ])
 
