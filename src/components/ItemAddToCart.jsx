@@ -2,9 +2,26 @@ import '../styles/ItemAddToCart.css'
 import PropTypes from 'prop-types';
 import decreaseIcon from '../assets/decrease.png'
 import increaseIcon from '../assets/increase.png'
+import { useState } from 'react';
 
 export default function ItemAddToCart(item) {
-    console.log(item.item.item.image)
+    const [itemCount, setItemCount] = useState(1);
+
+    function increaseItemCount() {
+        if(itemCount === 100) {
+            return;
+        } else {
+            setItemCount((prevCount) => prevCount + 1);
+        }
+    }
+
+    function decreaseItemCount() {
+        if(itemCount === 1) {
+            return;
+        } else {
+            setItemCount((prevCount) => prevCount - 1);
+        }
+    }
 
     return(
         <div className="itemAddToCart">
@@ -16,13 +33,13 @@ export default function ItemAddToCart(item) {
                     <p className='itemPrice'>${item.item.item.price}</p>
 
                     <div className='changeItemCount'>
-                        <button className='decreaseButton'>
+                        <button className='decreaseButton' onClick={ decreaseItemCount }>
                             <img className='decreaseIcon' src={decreaseIcon}></img>
                         </button>
 
-                        <input type='number' className='itemCount'></input>
+                        <input type='number' value={itemCount} className='itemCount'></input>
 
-                        <button className='increaseButton'>
+                        <button className='increaseButton' onClick={ increaseItemCount }>
                             <img className='increaseIcon' src={increaseIcon}></img>
                         </button>
                     </div>
