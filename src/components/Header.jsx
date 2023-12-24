@@ -16,7 +16,10 @@ export default function Header(itemCount) {
             <nav className="navBar">
                 <Link to='/shop' className='shop'>Shop</Link>
                 <Link to=''><img src={searchIcon} className='searchIcon' alt='search icon'></img></Link>
-                <Link to=''><img src={shoppingCart} alt='cart icon'></img></Link>
+                <button className='displayShoppingCart' onClick=''>
+                    <img src={shoppingCart} alt='cart icon'></img>
+                    <span className='itemCountCircle'>{itemCount.itemCount}</span>
+                </button>
             </nav>
         </div>
     )

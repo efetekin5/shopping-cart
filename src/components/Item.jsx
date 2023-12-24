@@ -13,7 +13,6 @@ export default function Item({itemCount, setItemCount}) {
             <Header itemCount={itemCount}></Header>
             <ItemAddToCart
                 item={item}
-                itemCount={itemCount}
                 setItemCount={setItemCount}
             ></ItemAddToCart>
         </>

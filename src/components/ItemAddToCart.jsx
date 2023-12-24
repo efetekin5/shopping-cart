@@ -4,11 +4,11 @@ import decreaseIcon from '../assets/decrease.png'
 import increaseIcon from '../assets/increase.png'
 import { useState } from 'react';
 
-export default function ItemAddToCart({item, itemCount, setItemCount}) {
+export default function ItemAddToCart({item, setItemCount}) {
     const [displayedItemCount, setDisplayedItemCount] = useState(1);
 
     function increaseItemCount() {
-        if(itemCount === 100) {
+        if(displayedItemCount === 100) {
             return;
         } else {
             setDisplayedItemCount((prevCount) => prevCount + 1);
@@ -16,7 +16,7 @@ export default function ItemAddToCart({item, itemCount, setItemCount}) {
     }
 
     function decreaseItemCount() {
-        if(itemCount === 1) {
+        if(displayedItemCount === 1) {
             return;
         } else {
             setDisplayedItemCount((prevCount) => prevCount - 1);
@@ -61,6 +61,5 @@ export default function ItemAddToCart({item, itemCount, setItemCount}) {
 }
 
 ItemAddToCart.propTypes = {
-    itemCount: PropTypes.number,
     setItemCount: PropTypes.func,
 }
