@@ -27,13 +27,12 @@ export default function MainForShopPage() {
     if(error) return <h1>An Error Was Encountered</h1>
     if(loading) return <h1>Loading...</h1>
 
-    console.log(itemData)
     return (
         <div className="mainForShopPage" data-testid="mainForShopPage">
             <div className="shopPageItems">
                 {itemData.map((item, index) => {
                     return(
-                        <Link key={`shopItem${index}`} className="link">
+                        <Link to={`/shop/${item.title}`} state={{ item }} key={`shopItem${index}`} className="link">
                             <div className="shopItem">
                                 <img className="shopItemImg" src={item.image}></img>
                                 <h6 className='shopItemTitle'>{item.title}</h6>

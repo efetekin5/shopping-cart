@@ -26,7 +26,6 @@ export default function MainForHomePage() {
 
     if(error) return <h1>An Error Was Encountered</h1>
     if(loading) return <h1>Loading...</h1>
-
     console.log(itemData)
     return(
         <div className="mainForHomePage">

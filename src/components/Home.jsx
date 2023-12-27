@@ -2,10 +2,14 @@ import Header from './Header'
 import MainForHomePage from './MainForHomePage'
 import PropTypes from 'prop-types'
 
-export default function Home({itemCount}) {
+export default function Home({itemCount, addedCartItems, setAddedCartItems}) {
     return(
         <>
-            <Header itemCount={itemCount}></Header>
+            <Header 
+                itemCount={itemCount}>
+                addedCartItems={addedCartItems}
+                setAddedCartItems={setAddedCartItems}
+            </Header>
             <MainForHomePage></MainForHomePage>
         </>
     )
@@ -13,4 +17,6 @@ export default function Home({itemCount}) {
 
 Home.propTypes = {
     itemCount: PropTypes.number,
+    addedCartItems: PropTypes.array,
+    setAddedCartItems: PropTypes.func,
 }

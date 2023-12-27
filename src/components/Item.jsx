@@ -3,17 +3,22 @@ import { useLocation } from 'react-router-dom';
 import ItemAddToCart from './ItemAddToCart';
 import PropTypes from 'prop-types'
 
-export default function Item({itemCount, setItemCount}) {
+export default function Item({itemCount, setItemCount, addedCartItems, setAddedCartItems}) {
     const location = useLocation()
     const item = location.state;
-    console.log(item.item.id)
 
     return(
         <>
-            <Header itemCount={itemCount}></Header>
+            <Header
+                itemCount={itemCount}
+                addedCartItems={addedCartItems}
+                setAddedCartItems={setAddedCartItems}
+            ></Header>
             <ItemAddToCart
                 item={item}
                 setItemCount={setItemCount}
+                addedCartItems={addedCartItems}
+                setAddedCartItems={setAddedCartItems}
             ></ItemAddToCart>
         </>
     )
@@ -22,4 +27,6 @@ export default function Item({itemCount, setItemCount}) {
 Item.propTypes = {
     itemCount: PropTypes.number,
     setItemCount: PropTypes.func,
+    addedCartItems: PropTypes.array,
+    setAddedCartItems: PropTypes.func,
 }
