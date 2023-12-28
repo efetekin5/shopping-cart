@@ -4,7 +4,7 @@ import decreaseIcon from '../assets/decrease.png'
 import increaseIcon from '../assets/increase.png'
 import { useState, useEffect } from 'react';
 
-export default function ItemAddToCart({item, setItemCount, addedCartItems, setAddedCartItems}) {
+export default function ItemAddToCart({item, addedCartItems, setAddedCartItems}) {
     const [displayedItemCount, setDisplayedItemCount] = useState(1);
 
     useEffect(() => {
@@ -36,8 +36,6 @@ export default function ItemAddToCart({item, setItemCount, addedCartItems, setAd
     }
 
     function handleAddToCart() {
-        setItemCount((prevCount) => prevCount + displayedItemCount);
-
         const isAlreadyAdded = addedCartItems.some((addedItem) => addedItem.title === item.item.title);
 
         if(isAlreadyAdded) {
@@ -100,7 +98,6 @@ export default function ItemAddToCart({item, setItemCount, addedCartItems, setAd
 }
 
 ItemAddToCart.propTypes = {
-    setItemCount: PropTypes.func,
     addedCartItems: PropTypes.array,
     setAddedCartItems: PropTypes.func,
 }
