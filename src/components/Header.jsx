@@ -1,8 +1,8 @@
 import '../styles/Header.css'
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"
 import shoppingCart from '../assets/shopping-cart.png'
 import PropTypes from 'prop-types'
-import { useState } from 'react';
+import { useState } from 'react'
 import decreaseIcon from '../assets/decrease.png'
 import increaseIcon from '../assets/increase.png'
 
