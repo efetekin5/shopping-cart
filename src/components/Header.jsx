@@ -9,9 +9,12 @@ import increaseIcon from '../assets/increase.png'
 export default function Header({addedCartItems = [], setAddedCartItems}) {
     const [isCartOpen, setIsCartOpen] = useState(false);
 
-    const totalItemCount = addedCartItems.reduce((total, addedItem) => {
+    let totalItemCount = addedCartItems.reduce((total, addedItem) => {
         return total + addedItem.howManyItems
     }, 0)
+    if(totalItemCount > 99) {
+        totalItemCount = '+99';
+    }
 
     const location = useLocation();
     const headerClass = location.pathname === '/' ? 'header' : 'shopHeader';

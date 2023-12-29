@@ -70,6 +70,11 @@
     font-size: 2rem;
     border-radius: 2rem;
     margin-top: 2rem;
+    transition: transform 0.15s linear;
+}
+
+.addToCart:active {
+    transform: scale(0.9);
 }
 
 .itemDetails {
